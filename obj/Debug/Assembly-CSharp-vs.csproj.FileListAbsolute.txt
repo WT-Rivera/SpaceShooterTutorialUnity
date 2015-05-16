@@ -1,0 +1,12 @@
+X:\Unity Projects\SpaceShooterTutorial\Temp\bin\Debug\Assembly-CSharp.dll
+X:\Unity Projects\SpaceShooterTutorial\Temp\bin\Debug\Assembly-CSharp.pdb
+X:\Unity Projects\SpaceShooterTutorial\Temp\bin\Debug\UnityEditor.dll
+X:\Unity Projects\SpaceShooterTutorial\Temp\bin\Debug\UnityEngine.dll
+X:\Unity Projects\SpaceShooterTutorial\Temp\bin\Debug\UnityEngine.UI.dll
+X:\Unity Projects\SpaceShooterTutorial\Temp\bin\Debug\Mono.Cecil.dll
+X:\Unity Projects\SpaceShooterTutorial\Temp\bin\Debug\nunit.framework.dll
+X:\Unity Projects\SpaceShooterTutorial\Temp\bin\Debug\Unity.DataContract.dll
+X:\Unity Projects\SpaceShooterTutorial\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+X:\Unity Projects\SpaceShooterTutorial\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+X:\Unity Projects\SpaceShooterTutorial\obj\Debug\Assembly-CSharp.dll
+X:\Unity Projects\SpaceShooterTutorial\obj\Debug\Assembly-CSharp.pdb
