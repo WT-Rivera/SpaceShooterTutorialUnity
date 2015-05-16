@@ -20,8 +20,20 @@ public class GameController : MonoBehaviour
     //amount of time between waves
     public float waveWait;
 
+    //Gui var for score
+    public GUIText scoreText;
+
+    //int for score;  ints should be used more than floats for scores because ints only count whole numbers
+    private int score;
+
     void Start()
     {
+        //set score to zero at start of game
+        score = 0;
+
+        //then call UpdateScore function to update score value
+        UpdateScore();
+
         //Starts coroutine SpawnWaves
         Debug.Log("starting corutine");
         StartCoroutine (SpawnWaves());
@@ -55,5 +67,23 @@ public class GameController : MonoBehaviour
             //wait for seconds until while loop is executed again
             yield return new WaitForSeconds(waveWait);
         }
+    }
+
+    //funtion for adding to score on destruction of gameobject
+    public void AddScore(int newScoreValue)
+    {
+        //update score with scoreValue
+        score += newScoreValue;
+
+        //call UpdateScore()
+        UpdateScore();
+
+    }
+
+    //new function for scoring
+    void UpdateScore()
+    {
+        //scoretext text is written next to "Score: " and incremented by score
+        scoreText.text = "Score: " + score;
     }
 }
