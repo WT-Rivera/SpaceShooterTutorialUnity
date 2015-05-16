@@ -17,6 +17,8 @@ public class DestroyByContact : MonoBehaviour
         Destroy(other.gameObject);
         Destroy(gameObject);
         Instantiate (explosion, transform.position, transform.rotation);
+
+        //if other object tagged "Player" collides, instantiate player explosion at last position and rotation 
         if (other.tag == "Player")
         {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
