@@ -23,11 +23,29 @@ public class GameController : MonoBehaviour
     //Gui var for score
     public GUIText scoreText;
 
+    //text for restart text
+    public GUIText restartText;
+
+    //text for Game Over
+    public GUIText gameOverText;
+
+    //boolean values for game over and restart
+    private bool gameOver;
+    private bool restart;
+
     //int for score;  ints should be used more than floats for scores because ints only count whole numbers
     private int score;
 
     void Start()
     {
+        //set boolean values at start of game
+        gameOver = false;
+        restart = false;
+
+        //set game over and restart text
+        restartText.text = "";
+        gameOverText.text = "";
+
         //set score to zero at start of game
         score = 0;
 
@@ -37,6 +55,20 @@ public class GameController : MonoBehaviour
         //Starts coroutine SpawnWaves
         Debug.Log("starting corutine");
         StartCoroutine (SpawnWaves());
+    }
+
+    //Update function for finding key presses
+    void Update()
+    {
+        //if the restart boolean is set to true, look for the keypress to restart the game
+        if (restart)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                //if r is pressed, load the loaded level
+                Application.LoadLevel(Application.loadedLevel);
+            }
+        }
     }
 
     //Changed fucntion to IEnumerator for use as a coroutine.
@@ -66,6 +98,17 @@ public class GameController : MonoBehaviour
 
             //wait for seconds until while loop is executed again
             yield return new WaitForSeconds(waveWait);
+
+            //check to see if bool gameOver is true
+            if (gameOver)
+            {
+                //set the restartText to say restart by pressing R, and set boolean to true
+                restartText.text = "Press 'R' to Restart";
+                restart = true;
+
+                //break loop if true
+                break;
+            }
         }
     }
 
@@ -85,5 +128,13 @@ public class GameController : MonoBehaviour
     {
         //scoretext text is written next to "Score: " and incremented by score
         scoreText.text = "Score: " + score;
+    }
+
+    //fucntion for Game Over
+    public void GameOver()
+    {
+        //when function is called, set game over text and set game over bool to true
+        gameOverText.text = "GAME OVER";
+        gameOver = true;
     }
 }
